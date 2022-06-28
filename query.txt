@@ -1,0 +1,112 @@
+CREATE TABLE cargos (
+idCa int(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+ncargo VARCHAR(50),
+PRIMARY KEY(idCa) USING BTREE
+)ENGINE = InnoDB AUTO_INCREMENT = 0 CHARACTER SET = utf8 COLLATE = utf8_general_ci;
+
+SELECT * FROM CARGOS;
+
+INSERT INTO cargos(ncargo) VALUES
+('PRECIDENTE'),
+('VICEPRECIDENTE'),
+('TESORERO'),
+('DEPORTES'),
+('VIGILANCIA'),
+('PRECIDENTE'),
+('ACTA1'),
+('ACTA2');
+
+CREATE TABLE gestiones (
+idGe int(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+año int(50),
+PRIMARY KEY(idGe) USING BTREE
+)ENGINE = InnoDB AUTO_INCREMENT = 0 CHARACTER SET = utf8 COLLATE = utf8_general_ci;
+
+INSERT INTO gestiones(año) VALUES
+('2015'),
+('2016'),
+('2017'),
+('2018'),
+('2019'),
+('2020'),
+('2021'),
+('2022');
+
+SELECT * FROM gestiones;
+
+CREATE TABLE socios (
+idSo int(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+apaterno varchar(50),
+amaterno varchar(50),
+nombres varchar(50),
+fnac varchar(50),
+ci int(25),
+celular int(25),
+correo varchar(50),
+PRIMARY KEY(idSo) USING BTREE
+)ENGINE = InnoDB AUTO_INCREMENT = 0 CHARACTER SET = utf8 COLLATE = utf8_general_ci;
+
+INSERT INTO socios (apaterno,amaterno,nombres,fnac,ci,celular,correo) VALUES
+('SUAREZ','FLORES','JUAN','01-10-1968','666778','7865123','juan@gmail.com'),
+('MIRANDA','QUINTERO','LUISA','08-12-1970','853234','72345123','luisa@gmail.com'),
+('FERNANDEZ','QUINTERO','MARIA','12-12-1971','67341234','72345312','maria@gmail.com'),
+('CHAMBI','PANTIGOZO','MARGOT','20-03-1990','9078563','67545423','margot@gmail.com'),
+('MONTERO','PIZARRO','KEVIN','25-01-1990','8967541','67876700','kevin@gmail.com'),
+('RODRIGUEZ','CANDIA','JUVENAL','11-07-1986','5678650','78686750','juve@gmail.com');
+
+
+SELECT * FROM historial;
+
+CREATE TABLE historial (
+idHi int(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+ingreso varchar(50),
+aporte varchar(50),
+participaciones varchar(50),
+PRIMARY KEY(idHi) USING BTREE
+)ENGINE = InnoDB AUTO_INCREMENT = 0 CHARACTER SET = utf8 COLLATE = utf8_general_ci;
+
+SELECT * FROM historial;
+
+INSERT INTO historial (ingreso,aporte,participaciones) VALUES
+('compra de accion','30000$','80'),
+('trabajo al inicio de la cooperativa','70000$','120');
+
+CREATE TABLE ReporteCoo (
+idRe int(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+gsemana varchar(50),
+fecha varchar(50),
+hora varchar(50),
+lugar varchar(50),
+PRIMARY KEY(idRe) USING BTREE
+)ENGINE = InnoDB AUTO_INCREMENT = 0 CHARACTER SET = utf8 COLLATE = utf8_general_ci;
+
+INSERT INTO ReporteCoo  (gsemana,fecha,hora,lugar) VALUES
+('20kg','03-06-2022','6:00 PM','lugar A'),
+('10kg','05-09-2022','8:00 AM','lugar B'),
+('5kg','10-10-2022','6:30 PM','lugar C');
+
+SELECT * FROM ReporteCoo;
+
+CREATE TABLE usuarios (
+  id int(11) UNSIGNED NOT NULL AUTO_INCREMENT,
+  email varchar(255) DEFAULT NULL,
+  password varchar(255) DEFAULT NULL,
+  PRIMARY KEY (id)
+) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8mb4;
+
+
+SELECT * FROM usuarios;
+
+INSERT INTO usuarios VALUES ('1','admin@gmail.com', '7c4a8d09ca3762af61e59520943dc26494f8941b'),
+INSERT INTO usuarios VALUES ('2','tesorero@gmail.com', '6ea195bd5fcd5964c0ea76262c6fbc31b48273d4'),
+INSERT INTO usuarios VALUES ('3','secre@gmail.com', '460d24c71a99443ecabefdcec9eec85a4ab3cd8f');
+
+
+SELECT SHA1();
+
+--admin@gmail.com contraseña 123456 --
+--tesorero@gmail.com contraseña 907080 --
+--secre@gmail.com contraseña 171500 --
+
+
+DROP TABLE usuarios;
